@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Smart Resume & Job Matcher</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>
+                <span class="fw-bold">Smart Resume Matcher</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features"><i class="fas fa-star me-1"></i>Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works"><i class="fas fa-info-circle me-1"></i>How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                            <i class="fas fa-question-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        AI-Powered Resume Matching
+                    </h1>
+                    <p class="lead text-white mb-4">
+                        Go beyond keyword matching with semantic search and AI reasoning. 
+                        Match resumes with job opportunities based on contextual understanding.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#uploadSection" class="btn btn-light btn-lg pulse">
+                            <i class="fas fa-play me-2"></i>Get Started
+                        </a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-chart-line me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-4">
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-4">
+                                <div class="feature-icon text-primary">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h5>Smart Parsing</h5>
+                                <p class="small">Extract skills, experience & education</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="feature-icon text-success">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h5>AI Embeddings</h5>
+                                <p class="small">Semantic understanding with SentenceTransformers</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="feature-icon text-warning">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h5>Intelligent Matching</h5>
+                                <p class="small">Contextual relevance over exact wording</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="uploadSection" class="py-5">
+        <div class="container">
+            <div class="glass-card p-5" id="uploadCard">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">
+                        <i class="fas fa-cloud-upload-alt me-3"></i>Upload Documents
+                    </h2>
+                    <p class="lead text-muted">Upload your resume and job description for AI analysis</p>
+                </div>
+                
+                <form id="uploadForm">
+                    <div class="row">
+                        <!-- Resume Upload -->
+                        <div class="col-md-6 mb-4">
+                            <div class="upload-area" id="resumeUpload">
+                                <div class="mb-4">
+                                    <i class="fas fa-user-tie fa-4x text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Upload Resume</h4>
+                                <p class="text-muted mb-4">PDF, DOCX, or TXT format</p>
+                                <p class="small text-muted mb-4">Drag & drop or click to browse</p>
+                                <input type="file" id="resumeFile" name="resume" accept=".pdf,.docx,.doc,.txt" class="d-none">
+                                <div class="file-info">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-file-alt me-2"></i>
+                                            <span class="file-name">No file selected</span>
+                                        </div>
+                                        <span class="file-size text-muted small"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Job Description Upload -->
+<div class="col-md-6 mb-4">
+    <div class="upload-area" id="jobUpload">
+        <div class="mb-4">
+            <i class="fas fa-briefcase fa-4x text-success"></i>
+        </div>
+        <h4 class="mb-3">Upload Job Description</h4>
+        <p class="text-muted mb-4">PDF, DOCX, or TXT format</p>
+        <p class="small text-muted mb-4">Drag & drop or click to browse</p>
+        <input type="file" id="jobFile" name="job_description" accept=".pdf,.docx,.doc,.txt" class="d-none">
+
+        <!-- Textarea should NOT trigger file upload -->
+        <div style="margin-top: 20px; padding: 10px; background: rgba(255,255,255,0.9); border-radius: 8px;">
+            <label for="jobText" class="form-label" style="cursor: text;">Or enter job description:</label>
+            <textarea id="jobText" name="jobText" rows="8" class="form-control mt-2" 
+                      style="cursor: text; pointer-events: auto;"
+                      placeholder="Type or paste job description here..."></textarea>
+        </div>
+
+        <div class="file-info">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <i class="fas fa-file-alt me-2"></i>
+                    <span class="file-name">No file selected</span>
+                </div>
+                <span class="file-size text-muted small"></span>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-dark btn-lg px-5 py-3 pulse" id="analyzeBtn">
+                            <i class="fas fa-magic me-3"></i>Analyze Match with AI
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-5 py-3 ms-3" id="resetBtn">
+                            <i class="fas fa-redo me-3"></i>Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="text-center py-5" id="loadingSpinner" style="display: none;">
+        <div class="loading-spinner"></div>
+        <h4 class="text-white mt-4">AI is analyzing your documents...</h4>
+        <p class="text-white">Processing semantic embeddings and intelligent matching</p>
+        <div class="mt-4">
+            <div class="progress" style="width: 300px; margin: 0 auto;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="py-5" style="display: none; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+        <div class="container">
+            <div class="glass-card p-5">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">
+                        <i class="fas fa-chart-bar me-3"></i>Match Analysis Results
+                    </h2>
+                    <p class="lead text-muted">AI-powered insights and recommendations</p>
+                </div>
+                
+                <!-- Overall Score -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 mb-4">
+                        <div class="score-card" id="overallScoreCard">
+                            <h3 class="mb-4">Overall Match Score</h3>
+                            <h1 class="display-1 fw-bold mb-4" id="overallScore">0%</h1>
+                            <h4 id="recommendationText" class="mb-4"></h4>
+                            <div class="progress">
+                                <div class="progress-bar" id="scoreProgress" role="progressbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-info-circle me-2"></i>Score Breakdown
+                            </h4>
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                                    <span><i class="fas fa-tools me-2"></i>Skills Match</span>
+                                    <span class="fw-bold" id="skillScore">0%</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                                    <span><i class="fas fa-clock me-2"></i>Experience Match</span>
+                                    <span class="fw-bold" id="expScore">0%</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                                    <span><i class="fas fa-graduation-cap me-2"></i>Education Match</span>
+                                    <span class="fw-bold" id="eduScore">0%</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-brain me-2"></i>Semantic Similarity</span>
+                                    <span class="fw-bold" id="semScore">0%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Analysis -->
+                <div class="row mb-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-check-circle text-success me-2"></i>Matched Skills
+                            </h4>
+                            <p class="text-muted">Required skills found in resume</p>
+                            <div id="matchedSkills" class="mt-4"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-exclamation-triangle text-warning me-2"></i>Missing Skills
+                            </h4>
+                            <p class="text-muted">Required skills not found</p>
+                            <div id="missingSkills" class="mt-4"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-star text-primary me-2"></i>Preferred Skills
+                            </h4>
+                            <p class="text-muted">Bonus skills matched</p>
+                            <div id="preferredSkills" class="mt-4"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Explanation -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="glass-card p-4">
+                            <h4 class="mb-4">
+                                <i class="fas fa-robot text-primary me-2"></i>AI Analysis & Explanation
+                            </h4>
+                            <div id="aiExplanation" class="ai-explanation mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Info -->
+                <div class="row mb-5">
+                    <div class="col-md-6 mb-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-user-tie text-primary me-2"></i>Resume Summary
+                            </h4>
+                            <div id="resumeSummary"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="glass-card p-4 h-100">
+                            <h4 class="mb-4">
+                                <i class="fas fa-briefcase text-success me-2"></i>Job Requirements
+                            </h4>
+                            <div id="jobSummary"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-primary btn-lg px-5 py-3" id="downloadBtn" style="display: none;">
+                        <i class="fas fa-download me-3"></i>Download Full Report
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-white mb-3">How It Works</h2>
+                <p class="lead text-white">Advanced AI-powered matching system</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="feature-icon text-primary mb-3">
+                            <i class="fas fa-file-import fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">Document Parsing</h4>
+                        <p class="text-muted">Extracts structured information from resumes and job descriptions including skills, experience, and education.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="feature-icon text-success mb-3">
+                            <i class="fas fa-brain fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">Semantic Embeddings</h4>
+                        <p class="text-muted">Uses SentenceTransformers to create vector representations for contextual understanding.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="feature-icon text-warning mb-3">
+                            <i class="fas fa-chart-network fa-3x"></i>
+                        </div>
+                        <h4 class="mb-3">Intelligent Matching</h4>
+                        <p class="text-muted">Calculates semantic similarity and weighted scores for accurate match recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-white">
+                        <i class="fas fa-robot me-2"></i>
+                        Smart Resume Matcher &copy; 2024
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-white">
+                        Powered by AI Embeddings & Semantic Search
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-info-circle me-2"></i>About Smart Resume Matcher
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This project focuses on building an AI-powered Resume and Job Matching System that uses embeddings, semantic search, and Generative AI reasoning.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Document parsing for PDF, DOCX, TXT files</li>
+                        <li>Semantic embeddings using SentenceTransformers</li>
+                        <li>Intelligent matching beyond keyword search</li>
+                        <li>AI-generated explanations for matches</li>
+                    </ul>
+                    <p class="mb-0">The system goes beyond traditional keyword matching by using language understanding models to interpret meaning, skills, and experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

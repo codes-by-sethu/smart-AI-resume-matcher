@@ -1,0 +1,35 @@
+{
+  "resume_data": {
+    "skills": [
+      "python",
+      "sql",
+      "r",
+      "go",
+      "mysql",
+      "postgresql",
+      "aws",
+      "docker",
+      "kubernetes"
+    ],
+    "experience": [],
+    "education": [
+      "science in computer science\n    "
+    ],
+    "certifications": [],
+    "summary": "",
+    "experience_years": 7
+  },
+  "job_data": {
+    "required_skills": [
+      "r",
+      "r"
+    ],
+    "preferred_skills": [
+      "r"
+    ],
+    "experience_required": 3,
+    "education_required": "",
+    "responsibilities": []
+  },
+  "match_result": {
+    "overall_score": 

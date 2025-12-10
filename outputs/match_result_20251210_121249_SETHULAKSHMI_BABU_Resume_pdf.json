@@ -1,0 +1,97 @@
+{
+  "success": true,
+  "ai_components_used": true,
+  "job_description_source": "text_input",
+  "resume_info": {
+    "filename": "SETHULAKSHMI BABU Resume.pdf",
+    "skills_count": 15,
+    "skills": [
+      "agile",
+      "analytical",
+      "ci/cd",
+      "communication",
+      "deep learning",
+      "docker",
+      "git",
+      "github",
+      "machine learning",
+      "matplotlib",
+      "problem-solving",
+      "python",
+      "seaborn",
+      "sql",
+      "tensorflow"
+    ],
+    "experience_years": 0,
+    "education": [
+      "university",
+      "pipelines using xgboost",
+      "job matcher",
+      "matching",
+      "fault detection"
+    ]
+  },
+  "job_info": {
+    "source": "text_input",
+    "filename": "text_input",
+    "required_skills": [
+      "analytical",
+      "python",
+      "sql",
+      "tableau"
+    ],
+    "preferred_skills": [
+      "power bi"
+    ],
+    "experience_required": 0,
+    "education_required": []
+  },
+  "match_result": {
+    "overall_score": 61.49525934457779,
+    "skill_score": 52.49999999999999,
+    "experience_score": 100.0,
+    "education_score": 100.0,
+    "semantic_score": 62.405186891555786,
+    "skill_details": {
+      "score": 52.49999999999999,
+      "required_matches": [
+        "sql",
+        "analytical",
+        "python"
+      ],
+      "preferred_matches": [],
+      "missing_required": [
+        "tableau"
+      ],
+      "missing_preferred": [
+        "power bi"
+      ],
+      "required_coverage": "3/4",
+      "preferred_coverage": "0/1",
+      "resume_skill_count": 15,
+      "required_skill_count": 4,
+      "preferred_skill_count": 1
+    },
+    "weighted_components": {
+      "required_skills": 18.374999999999996,
+      "preferred_skills": 0.0,
+      "experience": 25.0,
+      "education": 15.0,
+      "semantic": 3.1202593445777893
+    },
+    "match_summary": {
+      "skills": "3/4 required skills matched",
+      "experience": "0/0 years",
+      "education": "Meets requirement",
+      "semantic_similarity": "62.4%"
+    }
+  },
+  "ai_explanation": "❌ **POOR MATCH** - Significant gaps between candidate and job requirements.\n**Issues:** Missing critical required skills or insufficient experience.\n**Recommendation:** Not recommended for this role.\n\n**📊 SKILL ANALYSIS**\n- **Required Skills Matched (3/4):**\n  ✓ sql\n  ✓ analytical\n  ✓ python\n- **Missing Required Skills (1):**\n  ✗ tableau\n\n**⏳ EXPERIENCE ANALYSIS**\n✓ Exceeds requirement: 0 years (vs 0 required)\n\n**💡 NEXT STEPS**\n1. Consider for different role\n2. Keep in talent pool for future\n3. Provide constructive feedback\n\n*Analysis generated on 2025-12-10 12:12*",
+  "recommendation": {
+    "level": "Moderate",
+    "text": "Consider if no better candidates",
+    "color": "warning",
+    "icon": "alert-circle"
+  },
+  "match_quality": "Fair"
+}

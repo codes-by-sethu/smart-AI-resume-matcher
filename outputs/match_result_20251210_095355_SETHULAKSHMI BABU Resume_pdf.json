@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "resume_info": {
+    "filename": "SETHULAKSHMI BABU Resume.pdf",
+    "skills_count": 12,
+    "skills": [
+      "python",
+      "sql",
+      "docker",
+      "machine learning",
+      "ai",
+      "deep learning",
+      "tensorflow",
+      "git",
+      "github",
+      "ci/cd",
+      "agile",
+      "go"
+    ],
+    "experience_years": 0,
+    "education": [
+      "• Master’s in engineering - Major : Data and AI  | ongoing  | ESILV Engineering School, Courbevoie",
+      "• Bachelor’s in computer science  | 2023  | Mahatma Gandhi University, Kottayam | 88.80%",
+      "• Ethical hacking |  2023  | Avodha Institute"
+    ]
+  },
+  "job_info": {
+    "filename": "Chef de Projet - Data 2025.pdf",
+    "required_skills": [
+      "python",
+      "sql",
+      "ai"
+    ],
+    "preferred_skills": [],
+    "experience_required": 0
+  },
+  "match_result": {
+    "overall_score": 87.35725877802909,
+    "skill_score": 100.0,
+    "experience_score": 100.0,
+    "education_score": 50.0,
+    "semantic_similarity": -2.854824439418218,
+    "skill_details": {
+      "score": 100.0,
+      "required_matches": [
+        "ai",
+        "python",
+        "sql"
+      ],
+      "preferred_matches": [],
+      "missing_required": [],
+      "missing_preferred": [],
+      "required_coverage": "3/3",
+      "preferred_coverage": "0/0"
+    },
+    "match_breakdown": {
+      "skills_match": "3/3 required skills",
+      "experience_match": "0/0 years",
+      "education_match": "Partial",
+      "semantic_match": "-2.85%"
+    }
+  },
+  "ai_explanation": "Excellent match! Strong alignment with job requirements.",
+  "recommendation": {
+    "level": "Good",
+    "text": "Worth considering for interview",
+    "color": "info"
+  }
+}

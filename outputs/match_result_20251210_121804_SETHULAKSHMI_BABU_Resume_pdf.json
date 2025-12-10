@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "ai_components_used": true,
+  "job_description_source": "file_upload",
+  "resume_info": {
+    "filename": "SETHULAKSHMI BABU Resume.pdf",
+    "skills_count": 15,
+    "skills": [
+      "agile",
+      "analytical",
+      "ci/cd",
+      "communication",
+      "deep learning",
+      "docker",
+      "git",
+      "github",
+      "machine learning",
+      "matplotlib",
+      "problem-solving",
+      "python",
+      "seaborn",
+      "sql",
+      "tensorflow"
+    ],
+    "experience_years": 0,
+    "education": [
+      "university",
+      "pipelines using xgboost",
+      "job matcher",
+      "matching",
+      "fault detection"
+    ]
+  },
+  "job_info": {
+    "source": "file_upload",
+    "filename": "Chef de Projet - Data 2025.pdf",
+    "required_skills": [
+      "python",
+      "sql"
+    ],
+    "preferred_skills": [],
+    "experience_required": 0,
+    "education_required": []
+  },
+  "match_result": {
+    "overall_score": 75.47750096768141,
+    "skill_score": 100.0,
+    "experience_score": 100.0,
+    "education_score": 100.0,
+    "semantic_score": 9.550019353628159,
+    "skill_details": {
+      "score": 100.0,
+      "required_matches": [
+        "sql",
+        "python"
+      ],
+      "preferred_matches": [],
+      "missing_required": [],
+      "missing_preferred": [],
+      "required_coverage": "2/2",
+      "preferred_coverage": "0/0",
+      "resume_skill_count": 15,
+      "required_skill_count": 2,
+      "preferred_skill_count": 0
+    },
+    "weighted_components": {
+      "required_skills": 35.0,
+      "preferred_skills": 0.0,
+      "experience": 25.0,
+      "education": 15.0,
+      "semantic": 0.477500967681408
+    },
+    "match_summary": {
+      "skills": "2/2 required skills matched",
+      "experience": "0/0 years",
+      "education": "Meets requirement",
+      "semantic_similarity": "9.6%"
+    }
+  },
+  "ai_explanation": "⚠️ **GOOD MATCH** - Candidate has relevant experience with some skill gaps.\n**Strengths:** Has most required skills and meets experience requirements.\n**Gaps:** Missing some preferred skills.\n**Recommendation:** Consider if other candidates are unavailable.\n\n**📊 SKILL ANALYSIS**\n- **Required Skills Matched (2/2):**\n  ✓ sql\n  ✓ python\n\n**⏳ EXPERIENCE ANALYSIS**\n✓ Exceeds requirement: 0 years (vs 0 required)\n\n**💡 NEXT STEPS**\n1. Conduct phone screening first\n2. Assess willingness to learn missing skills\n3. Compare with other candidates\n\n*Analysis generated on 2025-12-10 12:18*",
+  "recommendation": {
+    "level": "Good",
+    "text": "Worth considering for interview",
+    "color": "info",
+    "icon": "thumbs-up"
+  },
+  "match_quality": "Good"
+}
