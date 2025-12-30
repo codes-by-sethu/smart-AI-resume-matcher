@@ -1,4 +1,3 @@
-```markdown
 # Smart AI Resume Matcher 🤖📄
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -207,4 +206,3 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - **Yasar Thajudeen**
 
 *"Matching talent with opportunity intelligently."*
-```
