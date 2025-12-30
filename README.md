@@ -1,7 +1,3 @@
-I need to update your README because **it's incorrect** - the commands it shows don't work with your actual Flask app. Here's the corrected version:
-
-## 📝 **Updated README.md**
-
 ```markdown
 # Smart AI Resume Matcher 🤖📄
 
