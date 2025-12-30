@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+
+# Temporary files
+app.log
+uploads/
+outputs/
+
+# IDE
+.vscode/
+.idea/
+EOF
